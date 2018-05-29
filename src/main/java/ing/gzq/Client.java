@@ -51,11 +51,11 @@ public class Client {
             try {
                 count = Integer.parseInt(Utils.getReader().readLine().trim());
                 if (count <= 0) {
-                    System.out.print("你还抢不抢？ 请重新输入 :");
+                    System.out.print("输入错误，请重新输入 :");
                     continue;
                 }
                 if (count > 3) {
-                    System.out.println("说了不超过3门 请重新输入 :");
+                    System.out.println("同时抢课数不能超过3门 请重新输入 :");
                     continue;
                 }
                 break;
@@ -97,7 +97,7 @@ public class Client {
 
     private boolean sendLoginRequest(String username, String password) throws IOException, URISyntaxException {
         URIBuilder uriBuilder = new URIBuilder().setScheme(Value.protocol).setHost(Value.host).setPath(Value.loginAjaxUri);
-        List<NameValuePair> formparams = new ArrayList<>();
+        List<NameValuePair> formparams = new ArrayList();
         formparams.add(new BasicNameValuePair("j_username", username));
         formparams.add(new BasicNameValuePair("j_password", password));
         UrlEncodedFormEntity entity = new UrlEncodedFormEntity(formparams, "UTF-8");

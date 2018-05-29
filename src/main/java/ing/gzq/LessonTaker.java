@@ -26,7 +26,6 @@ public class LessonTaker implements Runnable {
         this.client = client;
     }
 
-    @Override
     public void run() {
         while (true) {
             try {
@@ -109,7 +108,7 @@ public class LessonTaker implements Runnable {
     }
 
     private int printError(String responseContent) {
-        System.out.println("无法处理响应 : " + responseContent + "出现此问题时请记录使用过程与开发者联系。。。");
+        System.out.println("无法处理响应 : " + responseContent + "出现此问题时请记录使用过程并与开发者联系。。。");
         System.out.println("系统退出");
         System.exit(1);
         return -1;
